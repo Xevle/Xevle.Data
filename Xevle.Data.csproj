@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB1B852A-48EF-43D3-94A4-B0EE4EF82ABD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xevle.Data</RootNamespace>
+    <AssemblyName>Xevle.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Checksums\Adler32.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher32.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher16.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher16Checksum.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher32Checksum.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher64.cs" />
+    <Compile Include="Checksums\Fletcher\Fletcher64Checksum.cs" />
+    <Compile Include="Checksums\CRC\Pseudo\CRCK.cs" />
+    <Compile Include="Checksums\CRC\Pseudo\SICK.cs" />
+    <Compile Include="Checksums\Damm.cs" />
+    <Compile Include="Checksums\ISIN.cs" />
+    <Compile Include="Checksums\Luhn.cs" />
+    <Compile Include="Checksums\Verhoeff.cs" />
+    <Compile Include="Checksums\CRC\CRC.Combine.cs" />
+    <Compile Include="Checksums\CRC\CRC.cs" />
+    <Compile Include="Checksums\CRC\CRC.Factories.cs" />
+    <Compile Include="Checksums\CRC\CRC.GenerateTable.cs" />
+    <Compile Include="Checksums\CRC\CRC.Implementations.Byte.cs" />
+    <Compile Include="Checksums\CRC\CRC.Implementations.UInt.cs" />
+    <Compile Include="Checksums\CRC\CRC.Implementations.UInt128.cs" />
+    <Compile Include="Checksums\CRC\CRC.Implementations.ULong.cs" />
+    <Compile Include="Checksums\CRC\CRC.Implementations.UShort.cs" />
+    <Compile Include="Checksums\CRC\CRC32.cs" />
+    <Compile Include="Checksums\CRC\CRCDescriptor.cs" />
+    <Compile Include="Checksums\CRC\ICRC.cs" />
+    <Compile Include="Encoding\Base64.cs" />
+    <Compile Include="Encoding\Base64Encoder.cs" />
+    <Compile Include="Encoding\Base64Decoder.cs" />
+    <Compile Include="Hashes\SHA1.cs" />
+    <Compile Include="Hashes\SHA256.cs" />
+    <Compile Include="Compression\gzip.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Compression\" />
+    <Folder Include="Checksums\" />
+    <Folder Include="Cryptography\" />
+    <Folder Include="Encoding\" />
+    <Folder Include="Hashes\" />
+    <Folder Include="Checksums\Fletcher\" />
+    <Folder Include="Checksums\CRC\" />
+    <Folder Include="Checksums\CRC\Pseudo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xevle.Core\Xevle.Core.csproj">
+      <Project>{4D90F3D7-F459-4272-A2FB-7A6B6987EA2D}</Project>
+      <Name>Xevle.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
